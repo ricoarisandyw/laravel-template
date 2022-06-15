@@ -4,7 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    @include('layout.header')
+    @include('bootstrap.header')
     <div class="p-4">
         <a href="/contacts/create" class="btn btn-primary">Add</a>
         <table class="table">
