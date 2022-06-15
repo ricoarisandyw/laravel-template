@@ -18,4 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/error', function(){
+    return view('error');
+});
+
 Route::resource('fruit', FruitController::class);
+Route::get('/fruit/delete/{fruit}', [FruitController::class, 'delete']);

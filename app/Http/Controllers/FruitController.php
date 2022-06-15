@@ -57,6 +57,10 @@ class FruitController extends Controller
     public function show(Fruit $fruit)
     {
         //
+        return view('fruit.details',
+        [
+            "fruit"=> $fruit,
+        ]);
     }
 
     /**
@@ -68,6 +72,7 @@ class FruitController extends Controller
     public function edit(Fruit $fruit)
     {
         //
+	return view('fruit.update',["fruit"=>$fruit]);
     }
 
     /**
@@ -80,6 +85,8 @@ class FruitController extends Controller
     public function update(Request $request, Fruit $fruit)
     {
         //
+        $fruit->update($request->all());
+        return redirect(url('/fruit'));
     }
 
     /**
@@ -91,5 +98,10 @@ class FruitController extends Controller
     public function destroy(Fruit $fruit)
     {
         //
+    }
+
+    public function delete(Fruit $fruit){
+        $fruit->delete();
+        return redirect(url('/fruit'));
     }
 }

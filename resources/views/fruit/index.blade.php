@@ -1,4 +1,8 @@
 <div>
     nanti menampilkan semua buah/model
-    {{ $fruits }}
+    <?php foreach($fruits as $fruit) { ?>
+        @include('fruit.item', 
+            ['fruit' => $fruit]
+        )
+    <?php } ?>
 </div>
