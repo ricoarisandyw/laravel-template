@@ -18,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function(){
+    return view('test');
+});
+
 Route::resource('contacts', ContactController::class);
