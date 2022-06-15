@@ -16,9 +16,8 @@ class ContactController extends Controller
     {
         //
         $contacts = Contact::all();
-        return $contacts;
+        return view('contact.index', ["contacts" => $contacts]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
