@@ -1,4 +1,4 @@
-<tr class="card" style="border: 1px solid black;">
+<tr>
     <td>{{ $name }}</td>
     <td>{{ $email }}</td>
     <td>{{ $phone }}</td>
