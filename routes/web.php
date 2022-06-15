@@ -22,4 +22,8 @@ Route::get('/test', function(){
     return view('test');
 });
 
+Route::get('/error', function(){
+    return view('error');
+});
+
 Route::resource('contacts', ContactController::class);
