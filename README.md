@@ -1,19 +1,19 @@
-1. create model with
-```bash
-php artisan make:model Contact -m
+1. run controller generator
+```
+php artisan make:controller ContactController --model=Contact
+```
+*model make it integrated with model
+2. try modify index() in controller
+```
+public function index(){
+    return "Hello World";
+}
 ```
 
-2. edit your migration in folder <code>database/migrations/...create_contacts...php</code>
-
-3. design your model as you want.
-```php
-Schema::create('contacts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('photo')->nullable();
-        });
+3. call it inside route using resource.
 ```
-4. run <code>php artisan migrate</code>
+Route::resource('contact', ContactController::class)
+```
+resource is translator for route.
+
+4. Test it with accesing <code>localhost/contact</code>, it should be showing "Hello World"
